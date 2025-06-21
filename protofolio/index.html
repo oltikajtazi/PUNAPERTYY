@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olti Kajtazi | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f0f4f8 0%, #c9e7ff 100%);
+            color: #222;
+        }
+        header {
+            background: #0077b6;
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.2rem;
+        }
+        .header-highlight {
+            background: #ffd166;
+            color: #222;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            letter-spacing: 1px;
+            animation: pop 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes pop {
+            0% { transform: scale(0.7); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 2rem;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .info-cards {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .info-card {
+            background: #e0f7fa;
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        .info-card:hover {
+            transform: translateY(-5px) scale(1.04);
+            background: #b2ebf2;
+        }
+        .info-icon {
+            font-size: 1.3rem;
+        }
+        .about {
+            margin-bottom: 2rem;
+        }
+        .about h2 {
+            color: #0077b6;
+            margin-bottom: 0.5rem;
+        }
+        .about p {
+            margin: 0;
+        }
+        .skills {
+            margin-bottom: 2rem;
+        }
+        .skills h2 {
+            color: #0077b6;
+            margin-bottom: 0.5rem;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skills li {
+            margin-bottom: 0.5rem;
+        }
+        .skill-icon {
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .contact {
+            margin-top: 2rem;
+        }
+        .contact h2 {
+            color: #0077b6;
+            margin-bottom: 0.5rem;
+        }
+        .contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contact li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: #0077b6;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-socials {
+            margin-top: 1rem;
+        }
+        .header-socials a {
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            color: #0077b6;
+            background: #fff;
+            border-radius: 50%;
+            padding: 0.3rem 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            display: inline-block;
+        }
+        .header-socials a:hover {
+            background: #ffd166;
+            color: #222;
+            transform: scale(1.15);
+        }
+        .social-icon {
+            vertical-align: middle;
+        }
+        .projects {
+            margin-bottom: 2rem;
+        }
+        .projects h2 {
+            color: #0077b6;
+            margin-bottom: 0.5rem;
+        }
+        .projects-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 1.2rem 1.5rem;
+            width: 240px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+            background: #e0f7fa;
+        }
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .lang-switcher {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .lang-btn {
+            background: #0077b6;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s;
+        }
+        .lang-btn:hover {
+            background: #ffd166;
+            color: #222;
+        }
+        .lang-menu {
+            display: none;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+            margin-top: 0.5rem;
+            min-width: 120px;
+            overflow: hidden;
+        }
+        .lang-menu button {
+            background: none;
+            border: none;
+            color: #0077b6;
+            padding: 0.7rem 1rem;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-menu button:hover {
+            background: #e0f7fa;
+            color: #222;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .lang-switcher {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+        @media (max-width: 900px) {
+            .projects-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="main-title">Olti Kajtazi</h1>
+        <p id="main-desc">14-year-old student from Kosovo</p>
+        <div class="header-highlight" id="main-highlight">Certified Front-End Developer & Junior PHP Programmer</div>
+        <div class="header-socials">
+            <a href="mailto:kajtaziolti0@gmail.com" title="Email"><span class="social-icon">✉️</span></a>
+            <a href="tel:+383044814971" title="Call"><span class="social-icon">📞</span></a>
+            <a href="#" title="Contact"><span class="social-icon">💬</span></a>
+        </div>
+        <div class="lang-switcher">
+            <button class="lang-btn" onclick="toggleLangMenu()">🌐 Language ▼</button>
+            <div class="lang-menu" id="lang-menu">
+                <button onclick="setLang('en');toggleLangMenu()">English</button>
+                <button onclick="setLang('sq');toggleLangMenu()">Shqip</button>
+                <button onclick="setLang('es');toggleLangMenu()">Español</button>
+                <button onclick="setLang('fr');toggleLangMenu()">Français</button>
+                <button onclick="setLang('de');toggleLangMenu()">Deutsch</button>
+                <button onclick="setLang('zh');toggleLangMenu()">中文</button>
+                <button onclick="setLang('ar');toggleLangMenu()">العربية</button>
+                <button onclick="setLang('pt');toggleLangMenu()">Português</button>
+                <button onclick="setLang('ru');toggleLangMenu()">Русский</button>
+                <button onclick="setLang('hi');toggleLangMenu()">हिन्दी</button>
+            </div>
+        </div>
+    </header>
+    <div class="container" id="main-container">
+        <section class="info">
+            <div class="info-cards">
+                <div class="info-card">
+                    <span class="info-icon">📧</span>
+                    <a id="email-link" href="mailto:kajtaziolti0@gmail.com">kajtaziolti0@gmail.com</a>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">📞</span>
+                    <a id="phone-link" href="tel:+383044814971">+383 044 814 971</a>
+                </div>
+                <div class="info-card">
+                    <span class="info-icon">📍</span>
+                    <span id="location">Kosovo</span>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <h2 id="about-title">About Me</h2>
+            <p id="about-desc">
+                Hi! I'm Olti, a 14-year-old student from Kosovo. I'm passionate about technology, learning new things, and building cool projects. I'm certified in Front-End Development and as a Junior Programmer (PHP). I can fix bugs and improve projects using HTML, CSS, JavaScript, and PHP. I'm just starting my journey in web development and always looking for new opportunities to grow and improve my skills.
+            </p>
+            <ul>
+                <li><strong id="cert-title">Certifications:</strong> <span id="cert-list">Certified in Front-End Development, Junior Programmer (PHP)</span></li>
+            </ul>
+        </section>
+        <section class="skills">
+            <h2 id="skills-title">Skills</h2>
+            <ul class="skills-list">
+                <li><span class="skill-icon">💻</span> <span id="skill1">HTML5, CSS3, JavaScript</span></li>
+                <li><span class="skill-icon">🐘</span> <span id="skill2">PHP (Junior Programmer)</span></li>
+                <li><span class="skill-icon">📱</span> <span id="skill3">Responsive Web Design</span></li>
+                <li><span class="skill-icon">🛠️</span> <span id="skill4">Bug Fixing & Debugging (HTML, CSS, JS, PHP)</span></li>
+                <li><span class="skill-icon">🤝</span> <span id="skill5">Teamwork & Communication</span></li>
+            </ul>
+        </section>
+        <section class="projects">
+            <h2 id="projects-title">Sample Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <h3 id="proj1-title">Personal Portfolio</h3>
+                    <p id="proj1-desc">A modern, responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🛒</div>
+                    <h3 id="proj2-title">Mini E-commerce</h3>
+                    <p id="proj2-desc">Simple e-commerce front-end with product listing and cart features (HTML, CSS, JS).</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🐘</div>
+                    <h3 id="proj3-title">PHP Bug Fixer</h3>
+                    <p id="proj3-desc">Helped fix bugs and improve code quality in PHP-based school projects.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <span id="footer-email">Email: <a href="mailto:kajtaziolti0@gmail.com">kajtaziolti0@gmail.com</a></span> |
+            <span id="footer-phone">Phone: <a href="tel:+383044814971">+383 044 814 971</a></span> |
+            <span id="footer-cert">Certifications: Certified in Front-End Development, Junior Programmer (PHP)</span> |
+            <span id="footer-insta">Instagram: <a href="https://instagram.com/olti.kajtazi.31" target="_blank" rel="noopener">@olti.kajtazi.31</a></span>
+        </div>
+    </footer>
+    <script>
+        const translations = {
+            en: {
+                mainTitle: "Olti Kajtazi",
+                mainDesc: "14-year-old student from Kosovo",
+                mainHighlight: "Certified Front-End Developer & Junior PHP Programmer",
+                aboutTitle: "About Me",
+                aboutDesc: "Hi! I'm Olti, a 14-year-old student from Kosovo. I'm passionate about technology, learning new things, and building cool projects. I'm certified in Front-End Development and as a Junior Programmer (PHP). I can fix bugs and improve projects using HTML, CSS, JavaScript, and PHP. I'm just starting my journey in web development and always looking for new opportunities to grow and improve my skills.",
+                certTitle: "Certifications:",
+                certList: "Certified in Front-End Development, Junior Programmer (PHP)",
+                skillsTitle: "Skills",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (Junior Programmer)",
+                skill3: "Responsive Web Design",
+                skill4: "Bug Fixing & Debugging (HTML, CSS, JS, PHP)",
+                skill5: "Teamwork & Communication",
+                projectsTitle: "Sample Projects",
+                proj1Title: "Personal Portfolio",
+                proj1Desc: "A modern, responsive portfolio website built with HTML, CSS, and JavaScript.",
+                proj2Title: "Mini E-commerce",
+                proj2Desc: "Simple e-commerce front-end with product listing and cart features (HTML, CSS, JS).",
+                proj3Title: "PHP Bug Fixer",
+                proj3Desc: "Helped fix bugs and improve code quality in PHP-based school projects.",
+                footerEmail: "Email: ",
+                footerPhone: "Phone: ",
+                footerCert: "Certifications: Certified in Front-End Development, Junior Programmer (PHP)",
+                footerInsta: "Instagram: "
+            },
+            sq: {
+                mainTitle: "Olti Kajtazi",
+                mainDesc: "Nxënës 14-vjeçar nga Kosova",
+                mainHighlight: "I certifikuar në Front-End & Programues Junior PHP",
+                aboutTitle: "Rreth Meje",
+                aboutDesc: "Pershendetje! Unë jam Olti, një nxënës 14-vjeçar nga Kosova. Jam i apasionuar pas teknologjisë, mësimit të gjërave të reja dhe ndërtimit të projekteve të bukura. Jam i certifikuar në Front-End Development dhe si Programues Junior (PHP). Mund të rregulloj gabime dhe të përmirësoj projekte duke përdorur HTML, CSS, JavaScript dhe PHP. Jam në fillim të rrugëtimit tim në zhvillimin web dhe gjithmonë kërkoj mundësi të reja për të mësuar dhe përmirësuar aftësitë e mia.",
+                certTitle: "Certifikime:",
+                certList: "I certifikuar në Front-End Development, Programues Junior (PHP)",
+                skillsTitle: "Aftësitë",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (Programues Junior)",
+                skill3: "Dizajn Web i Përshtatshëm",
+                skill4: "Rregullimi & Gjetja e Gabimeve (HTML, CSS, JS, PHP)",
+                skill5: "Puna në Grup & Komunikimi",
+                projectsTitle: "Projektet Shembull",
+                proj1Title: "Portofolio Personale",
+                proj1Desc: "Një faqe portofolio moderne dhe e përshtatshme për çdo pajisje, ndërtuar me HTML, CSS dhe JavaScript.",
+                proj2Title: "Mini E-commerce",
+                proj2Desc: "Front-end i thjeshtë për e-commerce me listim produktesh dhe karrocë (HTML, CSS, JS).",
+                proj3Title: "Rregullues Gabimesh PHP",
+                proj3Desc: "Ndihmova në rregullimin e gabimeve dhe përmirësimin e cilësisë së kodit në projekte shkollore me PHP.",
+                footerEmail: "Email: ",
+                footerPhone: "Tel: ",
+                footerCert: "Certifikime: I certifikuar në Front-End Development, Programues Junior (PHP)",
+                footerInsta: "Instagram: "
+            },
+            es: {
+                mainTitle: "Olti Kajtazi",
+                mainDesc: "Estudiante de 14 años de Kosovo",
+                mainHighlight: "Desarrollador Front-End Certificado y Programador Junior PHP",
+                aboutTitle: "Sobre Mí",
+                aboutDesc: "¡Hola! Soy Olti, un estudiante de 14 años de Kosovo. Me apasiona la tecnología, aprender cosas nuevas y crear proyectos geniales. Estoy certificado en desarrollo Front-End y como programador junior (PHP). Puedo corregir errores y mejorar proyectos usando HTML, CSS, JavaScript y PHP. Estoy comenzando mi camino en el desarrollo web y siempre busco nuevas oportunidades para crecer y mejorar mis habilidades.",
+                certTitle: "Certificaciones:",
+                certList: "Certificado en Desarrollo Front-End, Programador Junior (PHP)",
+                skillsTitle: "Habilidades",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (Programador Junior)",
+                skill3: "Diseño Web Responsivo",
+                skill4: "Corrección y Depuración de Errores (HTML, CSS, JS, PHP)",
+                skill5: "Trabajo en Equipo y Comunicación",
+                projectsTitle: "Proyectos de Ejemplo",
+                proj1Title: "Portafolio Personal",
+                proj1Desc: "Un sitio web de portafolio moderno y responsivo construido con HTML, CSS y JavaScript.",
+                proj2Title: "Mini E-commerce",
+                proj2Desc: "Front-end simple de e-commerce con listado de productos y carrito (HTML, CSS, JS).",
+                proj3Title: "Corregidor de Errores PHP",
+                proj3Desc: "Ayudé a corregir errores y mejorar la calidad del código en proyectos escolares con PHP.",
+                footerEmail: "Correo: ",
+                footerPhone: "Teléfono: ",
+                footerCert: "Certificaciones: Certificado en Desarrollo Front-End, Programador Junior (PHP)",
+                footerInsta: "Instagram: "
+            },
+            fr: {
+                mainTitle: "Olti Kajtazi",
+                mainDesc: "Étudiant de 14 ans du Kosovo",
+                mainHighlight: "Développeur Front-End Certifié & Programmeur PHP Junior",
+                aboutTitle: "À propos de moi",
+                aboutDesc: "Salut ! Je suis Olti, un étudiant de 14 ans du Kosovo. Passionné par la technologie, l'apprentissage et la création de projets. Certifié en développement Front-End et comme programmeur junior (PHP). Je peux corriger des bugs et améliorer des projets en HTML, CSS, JavaScript et PHP. Je débute dans le développement web et cherche toujours à progresser.",
+                certTitle: "Certifications:",
+                certList: "Certifié en Développement Front-End, Programmeur Junior (PHP)",
+                skillsTitle: "Compétences",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (Programmeur Junior)",
+                skill3: "Design Web Responsive",
+                skill4: "Correction & Débogage (HTML, CSS, JS, PHP)",
+                skill5: "Travail d'équipe & Communication",
+                projectsTitle: "Projets Exemple",
+                proj1Title: "Portfolio Personnel",
+                proj1Desc: "Un site portfolio moderne et responsive construit avec HTML, CSS et JavaScript.",
+                proj2Title: "Mini E-commerce",
+                proj2Desc: "Front-end simple de e-commerce avec liste de produits et panier (HTML, CSS, JS).",
+                proj3Title: "Correcteur de Bugs PHP",
+                proj3Desc: "Aidé à corriger des bugs et améliorer la qualité du code dans des projets scolaires en PHP.",
+                footerEmail: "Email : ",
+                footerPhone: "Téléphone : ",
+                footerCert: "Certifications : Certifié en Développement Front-End, Programmeur Junior (PHP)",
+                footerInsta: "Instagram : "
+            },
+            de: {
+                mainTitle: "Olti Kajtazi",
+                mainDesc: "14-jähriger Schüler aus dem Kosovo",
+                mainHighlight: "Zertifizierter Front-End-Entwickler & Junior PHP Programmierer",
+                aboutTitle: "Über mich",
+                aboutDesc: "Hallo! Ich bin Olti, ein 14-jähriger Schüler aus dem Kosovo. Ich bin begeistert von Technologie, neuen Dingen und coolen Projekten. Ich bin zertifiziert in Front-End-Entwicklung und als Junior-Programmierer (PHP). Ich kann Fehler beheben und Projekte mit HTML, CSS, JavaScript und PHP verbessern. Ich beginne gerade meine Reise in der Webentwicklung und suche immer nach neuen Möglichkeiten, meine Fähigkeiten zu verbessern.",
+                certTitle: "Zertifikate:",
+                certList: "Zertifiziert in Front-End-Entwicklung, Junior Programmierer (PHP)",
+                skillsTitle: "Fähigkeiten",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (Junior Programmierer)",
+                skill3: "Responsives Webdesign",
+                skill4: "Fehlerbehebung & Debugging (HTML, CSS, JS, PHP)",
+                skill5: "Teamarbeit & Kommunikation",
+                projectsTitle: "Beispielprojekte",
+                proj1Title: "Persönliches Portfolio",
+                proj1Desc: "Eine moderne, responsive Portfolio-Website mit HTML, CSS und JavaScript.",
+                proj2Title: "Mini E-Commerce",
+                proj2Desc: "Einfaches E-Commerce-Frontend mit Produktliste und Warenkorb (HTML, CSS, JS).",
+                proj3Title: "PHP Fehlerbeheber",
+                proj3Desc: "Habe geholfen, Fehler zu beheben und die Codequalität in PHP-Schulprojekten zu verbessern.",
+                footerEmail: "E-Mail: ",
+                footerPhone: "Telefon: ",
+                footerCert: "Zertifikate: Zertifiziert in Front-End-Entwicklung, Junior Programmierer (PHP)",
+                footerInsta: "Instagram: "
+            },
+            zh: {
+                mainTitle: "Olti Kajtazi",
+                mainDesc: "来自科索沃的14岁学生",
+                mainHighlight: "认证前端开发者 & PHP初级程序员",
+                aboutTitle: "关于我",
+                aboutDesc: "你好！我是Olti，来自科索沃的14岁学生。我热爱技术，喜欢学习新知识和开发有趣的项目。我拥有前端开发和PHP初级程序员证书。我可以用HTML、CSS、JavaScript和PHP修复bug并改进项目。我刚刚开始我的Web开发之路，期待更多学习和成长的机会。",
+                certTitle: "证书：",
+                certList: "前端开发证书，PHP初级程序员",
+                skillsTitle: "技能",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP（初级程序员）",
+                skill3: "响应式网页设计",
+                skill4: "修复和调试（HTML, CSS, JS, PHP）",
+                skill5: "团队合作与沟通",
+                projectsTitle: "示例项目",
+                proj1Title: "个人作品集",
+                proj1Desc: "一个用HTML、CSS和JavaScript构建的现代响应式作品集网站。",
+                proj2Title: "迷你电商",
+                proj2Desc: "简单的电商前端，包含产品列表和购物车功能（HTML, CSS, JS）。",
+                proj3Title: "PHP Bug修复",
+                proj3Desc: "帮助修复PHP学校项目中的bug并提升代码质量。",
+                footerEmail: "邮箱：",
+                footerPhone: "电话：",
+                footerCert: "证书：前端开发证书，PHP初级程序员",
+                footerInsta: "Instagram："
+            },
+            ar: {
+                mainTitle: "أولتي كاجتازي",
+                mainDesc: "طالب يبلغ من العمر 14 عامًا من كوسوفو",
+                mainHighlight: "مطور Front-End معتمد ومبرمج PHP مبتدئ",
+                aboutTitle: "عنّي",
+                aboutDesc: "مرحبًا! أنا أولتي، طالب يبلغ من العمر 14 عامًا من كوسوفو. شغوف بالتكنولوجيا وتعلم أشياء جديدة وبناء مشاريع رائعة. حاصل على شهادة في تطوير الواجهة الأمامية ومبرمج مبتدئ (PHP). يمكنني إصلاح الأخطاء وتحسين المشاريع باستخدام HTML وCSS وJavaScript وPHP. بدأت رحلتي في تطوير الويب وأبحث دائمًا عن فرص جديدة للنمو وتطوير مهاراتي.",
+                certTitle: "الشهادات:",
+                certList: "حاصل على شهادة في تطوير الواجهة الأمامية، مبرمج مبتدئ (PHP)",
+                skillsTitle: "المهارات",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (مبرمج مبتدئ)",
+                skill3: "تصميم ويب متجاوب",
+                skill4: "إصلاح الأخطاء وتصحيحها (HTML, CSS, JS, PHP)",
+                skill5: "العمل الجماعي والتواصل",
+                projectsTitle: "نماذج مشاريع",
+                proj1Title: "ملف شخصي",
+                proj1Desc: "موقع ملف شخصي حديث ومتجاوب تم بناؤه باستخدام HTML وCSS وJavaScript.",
+                proj2Title: "تجارة إلكترونية مصغرة",
+                proj2Desc: "واجهة أمامية بسيطة للتجارة الإلكترونية مع قائمة منتجات وسلة (HTML, CSS, JS).",
+                proj3Title: "مصلح أخطاء PHP",
+                proj3Desc: "ساعدت في إصلاح الأخطاء وتحسين جودة الكود في مشاريع PHP المدرسية.",
+                footerEmail: "البريد الإلكتروني: ",
+                footerPhone: "الهاتف: ",
+                footerCert: "الشهادات: حاصل على شهادة في تطوير الواجهة الأمامية، مبرمج مبتدئ (PHP)",
+                footerInsta: "انستغرام: "
+            },
+            pt: {
+                mainTitle: "Olti Kajtazi",
+                mainDesc: "Estudante de 14 anos do Kosovo",
+                mainHighlight: "Desenvolvedor Front-End Certificado & Programador Júnior PHP",
+                aboutTitle: "Sobre Mim",
+                aboutDesc: "Olá! Eu sou Olti, um estudante de 14 anos do Kosovo. Sou apaixonado por tecnologia, aprender coisas novas e criar projetos legais. Sou certificado em Front-End Development e como Programador Júnior (PHP). Posso corrigir bugs e melhorar projetos usando HTML, CSS, JavaScript e PHP. Estou começando minha jornada no desenvolvimento web e sempre procuro novas oportunidades para crescer e aprimorar minhas habilidades.",
+                certTitle: "Certificações:",
+                certList: "Certificado em Front-End Development, Programador Júnior (PHP)",
+                skillsTitle: "Habilidades",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (Programador Júnior)",
+                skill3: "Design Web Responsivo",
+                skill4: "Correção e Depuração de Bugs (HTML, CSS, JS, PHP)",
+                skill5: "Trabalho em Equipe & Comunicação",
+                projectsTitle: "Projetos de Exemplo",
+                proj1Title: "Portfólio Pessoal",
+                proj1Desc: "Um site de portfólio moderno e responsivo construído com HTML, CSS e JavaScript.",
+                proj2Title: "Mini E-commerce",
+                proj2Desc: "Front-end simples de e-commerce com listagem de produtos e carrinho (HTML, CSS, JS).",
+                proj3Title: "Corretor de Bugs PHP",
+                proj3Desc: "Ajudei a corrigir bugs e melhorar a qualidade do código em projetos escolares com PHP.",
+                footerEmail: "Email: ",
+                footerPhone: "Telefone: ",
+                footerCert: "Certificações: Certificado em Front-End Development, Programador Júnior (PHP)",
+                footerInsta: "Instagram: "
+            },
+            ru: {
+                mainTitle: "Олти Кайтази",
+                mainDesc: "14-летний ученик из Косово",
+                mainHighlight: "Сертифицированный Front-End разработчик и Junior PHP программист",
+                aboutTitle: "Обо мне",
+                aboutDesc: "Привет! Я Олти, 14-летний ученик из Косово. Я увлекаюсь технологиями, люблю учиться новому и создавать интересные проекты. Я сертифицирован в Front-End разработке и как Junior программист (PHP). Могу исправлять ошибки и улучшать проекты на HTML, CSS, JavaScript и PHP. Я только начинаю свой путь в веб-разработке и всегда ищу новые возможности для роста и развития своих навыков.",
+                certTitle: "Сертификаты:",
+                certList: "Сертифицирован в Front-End разработке, Junior программист (PHP)",
+                skillsTitle: "Навыки",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (Junior программист)",
+                skill3: "Адаптивный веб-дизайн",
+                skill4: "Исправление и отладка ошибок (HTML, CSS, JS, PHP)",
+                skill5: "Работа в команде и коммуникация",
+                projectsTitle: "Примеры проектов",
+                proj1Title: "Личное портфолио",
+                proj1Desc: "Современный адаптивный сайт-портфолио на HTML, CSS и JavaScript.",
+                proj2Title: "Мини E-commerce",
+                proj2Desc: "Простой фронтенд для интернет-магазина с каталогом товаров и корзиной (HTML, CSS, JS).",
+                proj3Title: "Исправление ошибок PHP",
+                proj3Desc: "Помогал исправлять ошибки и улучшать качество кода в школьных проектах на PHP.",
+                footerEmail: "Почта: ",
+                footerPhone: "Телефон: ",
+                footerCert: "Сертификаты: Сертифицирован в Front-End разработке, Junior программист (PHP)",
+                footerInsta: "Инстаграм: "
+            },
+            hi: {
+                mainTitle: "ओल्टी काजताज़ी",
+                mainDesc: "कोसोवो का 14 वर्षीय छात्र",
+                mainHighlight: "प्रमाणित फ्रंट-एंड डेवलपर और जूनियर PHP प्रोग्रामर",
+                aboutTitle: "मेरे बारे में",
+                aboutDesc: "नमस्ते! मैं ओल्टी हूँ, कोसोवो का 14 वर्षीय छात्र। मुझे तकनीक, नई चीजें सीखना और शानदार प्रोजेक्ट बनाना पसंद है। मैं फ्रंट-एंड डेवलपमेंट और जूनियर प्रोग्रामर (PHP) में प्रमाणित हूँ। मैं HTML, CSS, JavaScript और PHP का उपयोग करके बग्स ठीक कर सकता हूँ और प्रोजेक्ट्स को बेहतर बना सकता हूँ। मैं वेब डेवलपमेंट की अपनी यात्रा शुरू कर रहा हूँ और हमेशा अपनी क्षमताओं को बढ़ाने के लिए नए अवसरों की तलाश में रहता हूँ।",
+                certTitle: "प्रमाणपत्र:",
+                certList: "फ्रंट-एंड डेवलपमेंट में प्रमाणित, जूनियर प्रोग्रामर (PHP)",
+                skillsTitle: "कौशल",
+                skill1: "HTML5, CSS3, JavaScript",
+                skill2: "PHP (जूनियर प्रोग्रामर)",
+                skill3: "उत्तरदायी वेब डिज़ाइन",
+                skill4: "बग फिक्सिंग और डिबगिंग (HTML, CSS, JS, PHP)",
+                skill5: "टीमवर्क और संचार",
+                projectsTitle: "नमूना प्रोजेक्ट्स",
+                proj1Title: "पर्सनल पोर्टफोलियो",
+                proj1Desc: "HTML, CSS और JavaScript से बना एक आधुनिक, उत्तरदायी पोर्टफोलियो वेबसाइट।",
+                proj2Title: "मिनी ई-कॉमर्स",
+                proj2Desc: "सरल ई-कॉमर्स फ्रंट-एंड जिसमें उत्पाद सूची और कार्ट फीचर्स (HTML, CSS, JS) हैं।",
+                proj3Title: "PHP बग फिक्सर",
+                proj3Desc: "PHP आधारित स्कूल प्रोजेक्ट्स में बग्स को ठीक करने और कोड क्वालिटी सुधारने में मदद की।",
+                footerEmail: "ईमेल: ",
+                footerPhone: "फोन: ",
+                footerCert: "प्रमाणपत्र: फ्रंट-एंड डेवलपमेंट में प्रमाणित, जूनियर प्रोग्रामर (PHP)",
+                footerInsta: "इंस्टाग्राम: "
+            }
+        };
+        function setLang(lang) {
+            const t = translations[lang];
+            document.getElementById('main-title').textContent = t.mainTitle;
+            document.getElementById('main-desc').textContent = t.mainDesc;
+            document.getElementById('main-highlight').textContent = t.mainHighlight;
+            document.getElementById('about-title').textContent = t.aboutTitle;
+            document.getElementById('about-desc').textContent = t.aboutDesc;
+            document.getElementById('cert-title').textContent = t.certTitle;
+            document.getElementById('cert-list').textContent = t.certList;
+            document.getElementById('skills-title').textContent = t.skillsTitle;
+            document.getElementById('skill1').textContent = t.skill1;
+            document.getElementById('skill2').textContent = t.skill2;
+            document.getElementById('skill3').textContent = t.skill3;
+            document.getElementById('skill4').textContent = t.skill4;
+            document.getElementById('skill5').textContent = t.skill5;
+            document.getElementById('projects-title').textContent = t.projectsTitle;
+            document.getElementById('proj1-title').textContent = t.proj1Title;
+            document.getElementById('proj1-desc').textContent = t.proj1Desc;
+            document.getElementById('proj2-title').textContent = t.proj2Title;
+            document.getElementById('proj2-desc').textContent = t.proj2Desc;
+            document.getElementById('proj3-title').textContent = t.proj3Title;
+            document.getElementById('proj3-desc').textContent = t.proj3Desc;
+            document.getElementById('footer-email').innerHTML = t.footerEmail + '<a href="mailto:kajtaziolti0@gmail.com">kajtaziolti0@gmail.com</a>';
+            document.getElementById('footer-phone').innerHTML = t.footerPhone + '<a href="tel:+383044814971">+383 044 814 971</a>';
+            document.getElementById('footer-cert').textContent = t.footerCert;
+            document.getElementById('footer-insta').innerHTML = t.footerInsta + '<a href="https://instagram.com/olti.kajtazi.31" target="_blank" rel="noopener">@olti.kajtazi.31</a>';
+            document.getElementById('location').textContent = lang === 'en' ? 'Kosovo' : 'Kosova';
+        }
+        function toggleLangMenu() {
+            const menu = document.getElementById('lang-menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+        // Optional: Close dropdown if clicked outside
+        window.addEventListener('click', function(e) {
+            const menu = document.getElementById('lang-menu');
+            const btn = document.querySelector('.lang-btn');
+            if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
