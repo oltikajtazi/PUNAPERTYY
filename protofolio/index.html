@@ -13,11 +13,81 @@
             background: linear-gradient(120deg, #f0f4f8 0%, #c9e7ff 100%);
             color: #222;
         }
+        /* --- Navbar Styles --- */
+        .navbar {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: box-shadow 0.3s;
+        }
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.7rem 1.5rem;
+        }
+        .nav-logo {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #0077b6;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-link {
+            color: #222;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .nav-link:hover, .nav-link:focus {
+            background: #e0f7fa;
+            color: #0077b6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .nav-cv {
+            background: #0077b6;
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,119,182,0.08);
+        }
+        .nav-cv:hover {
+            background: #ffd166;
+            color: #222;
+        }
+        @media (max-width: 700px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 0.7rem 0.7rem;
+            }
+            .nav-links {
+                gap: 0.5rem;
+                flex-wrap: wrap;
+            }
+        }
         header {
             background: #0077b6;
             color: #fff;
             padding: 2rem 0 1rem 0;
             text-align: center;
+            margin-top: 60px;
         }
         header h1 {
             margin: 0;
@@ -102,20 +172,27 @@
             color: #0077b6;
             margin-bottom: 0.5rem;
         }
-        .skills ul {
-            list-style: none;
-            padding: 0;
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
         }
-        .skills-list {
-            list-style: none;
-            padding: 0;
+        .skills-table th, .skills-table td {
+            border: 1px solid #e0f7fa;
+            padding: 0.6rem 1rem;
+            text-align: left;
         }
-        .skills li {
-            margin-bottom: 0.5rem;
+        .skills-table th {
+            background: #e0f7fa;
+            color: #0077b6;
+            font-weight: 700;
         }
-        .skill-icon {
-            margin-right: 0.5rem;
-            font-size: 1.1rem;
+        .skills-table td {
+            background: #f8fafc;
+        }
+        .skill-level {
+            font-weight: 600;
+            color: #0077b6;
         }
         .contact {
             margin-top: 2rem;
@@ -254,31 +331,58 @@
             background: #e0f7fa;
             color: #222;
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 1rem;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            .footer-content {
-                flex-direction: column;
-                gap: 0.2rem;
-            }
-            .lang-switcher {
-                top: 1rem;
-                right: 1rem;
-            }
+        /* --- Section Animations --- */
+        .container, .about, .skills, .projects, .contact, .footer-content {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
         }
-        @media (max-width: 900px) {
-            .projects-grid {
-                flex-direction: column;
-                align-items: center;
+        .container.visible, .about.visible, .skills.visible, .projects.visible, .contact.visible, .footer-content.visible {
+            opacity: 1;
+            transform: none;
+        }
+        /* --- Typography Improvements --- */
+        h1, h2, h3 {
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        p, li, span, a {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        /* --- Section Spacing --- */
+        section {
+            margin-bottom: 2.5rem;
+            padding-top: 1.5rem;
+        }
+        @media (max-width: 600px) {
+            section {
+                margin-bottom: 1.2rem;
+                padding-top: 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Olti Kajtazi</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="Olti_Kajtazi_CV.pdf" class="nav-link nav-cv" target="_blank" download>Download CV</a></li>
+            </ul>
+        </div>
+    </nav>
     <header>
         <h1 id="main-title">Olti Kajtazi</h1>
         <p id="main-desc">14-year-old student from Kosovo</p>
@@ -321,7 +425,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <h2 id="about-title">About Me</h2>
             <p id="about-desc">
                 Hi! I'm Olti, a 14-year-old student from Kosovo. I'm passionate about technology, learning new things, and building cool projects. I'm certified in Front-End Development and as a Junior Programmer (PHP). I can fix bugs and improve projects using HTML, CSS, JavaScript, and PHP. I'm just starting my journey in web development and always looking for new opportunities to grow and improve my skills.
@@ -330,23 +434,46 @@
                 <li><strong id="cert-title">Certifications:</strong> <span id="cert-list">Certified in Front-End Development, Junior Programmer (PHP)</span></li>
             </ul>
         </section>
-        <section class="skills">
+        <section class="skills" id="skills">
             <h2 id="skills-title">Skills</h2>
-            <ul class="skills-list">
-                <li><span class="skill-icon">💻</span> <span id="skill1">HTML5, CSS3, JavaScript</span></li>
-                <li><span class="skill-icon">🐘</span> <span id="skill2">PHP (Junior Programmer)</span></li>
-                <li><span class="skill-icon">📱</span> <span id="skill3">Responsive Web Design</span></li>
-                <li><span class="skill-icon">🛠️</span> <span id="skill4">Bug Fixing & Debugging (HTML, CSS, JS, PHP)</span></li>
-                <li><span class="skill-icon">🤝</span> <span id="skill5">Teamwork & Communication</span></li>
-            </ul>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="skill-icon">💻</span> <span id="skill1">HTML5, CSS3, JavaScript</span></td>
+                        <td class="skill-level">Advanced</td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">🐘</span> <span id="skill2">PHP (Junior Programmer)</span></td>
+                        <td class="skill-level">Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">📱</span> <span id="skill3">Responsive Web Design</span></td>
+                        <td class="skill-level">Advanced</td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">🛠️</span> <span id="skill4">Bug Fixing & Debugging (HTML, CSS, JS, PHP)</span></td>
+                        <td class="skill-level">Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td><span class="skill-icon">🤝</span> <span id="skill5">Teamwork & Communication</span></td>
+                        <td class="skill-level">Good</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
-        <section class="projects">
+        <section class="projects" id="projects">
             <h2 id="projects-title">Sample Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">🌐</div>
                     <h3 id="proj1-title">Personal Portfolio</h3>
-                    <p id="proj1-desc">A modern, responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+                    <p id="proj1-desc">A modern, responsive portfolio website built with HTML, CSS, and JavaScript. <br><a href="https://olti.xyz" target="_blank" rel="noopener" style="color:#0077b6;font-weight:600;">Visit olti.xyz</a></p>
                 </div>
                 <div class="project-card">
                     <div class="project-icon">🛒</div>
@@ -359,6 +486,14 @@
                     <p id="proj3-desc">Helped fix bugs and improve code quality in PHP-based school projects.</p>
                 </div>
             </div>
+        </section>
+        <section class="contact" id="contact">
+            <h2 id="contact-title">Contact</h2>
+            <ul>
+                <li><span class="info-icon">📧</span> <a id="email-link" href="mailto:kajtaziolti0@gmail.com">kajtaziolti0@gmail.com</a></li>
+                <li><span class="info-icon">💻</span> <a href="https://github.com/olti-kajtazi" target="_blank" rel="noopener">GitHub: olti-kajtazi</a></li>
+                <li><span class="info-icon">📍</span> <span id="location">Kosovo</span></li>
+            </ul>
         </section>
     </div>
     <footer>
@@ -664,6 +799,16 @@
             const menu = document.getElementById('lang-menu');
             menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
         }
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
         // Optional: Close dropdown if clicked outside
         window.addEventListener('click', function(e) {
             const menu = document.getElementById('lang-menu');
@@ -672,6 +817,31 @@
                 menu.style.display = 'none';
             }
         });
+        // Section fade-in animation
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        document.querySelectorAll('section, .container').forEach(section => {
+            observer.observe(section);
+        });
+        // --- Section fade-in on scroll ---
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.container, .about, .skills, .projects, .contact, .footer-content');
+            for (const el of reveals) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) {
+                    el.classList.add('visible');
+                }
+            }
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('DOMContentLoaded', revealOnScroll);
     </script>
 </body>
 </html>
