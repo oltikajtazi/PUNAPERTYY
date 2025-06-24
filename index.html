@@ -88,6 +88,7 @@
             padding: 2rem 0 1rem 0;
             text-align: center;
             margin-top: 60px;
+            position: relative;
         }
         header h1 {
             margin: 0;
@@ -284,7 +285,7 @@
         }
         .lang-switcher {
             position: absolute;
-            top: 2rem;
+            top: 1.5rem;
             right: 2rem;
             z-index: 10;
             display: flex;
@@ -392,7 +393,7 @@
             <a href="tel:+383044814971" title="Call"><span class="social-icon">📞</span></a>
             <a href="#" title="Contact"><span class="social-icon">💬</span></a>
         </div>
-        <div class="lang-switcher">
+        <div class="lang-switcher" style="position: absolute; top: 1.5rem; right: 2rem;">
             <button class="lang-btn" onclick="toggleLangMenu()">🌐 Language ▼</button>
             <div class="lang-menu" id="lang-menu">
                 <button onclick="setLang('en');toggleLangMenu()">English</button>
