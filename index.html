@@ -10,7 +10,8 @@
     <header>
         <div class="container header-container">
             <h1>Zhvillues Freelancer</h1>
-            <nav>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav id="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">Rreth Meje</a>
                 <a href="projects.html">Projektet</a>
@@ -72,5 +73,43 @@
             <p>© 2025 Olti Kajtazi | <a href="contact.html">Kontakto</a></p>
         </div>
     </footer>
+    <!-- Chat Widget -->
+    <div id="chat-launcher" class="chat-launcher" aria-hidden="false">
+        <button id="chat-open" class="chat-open" aria-label="Open chat">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#fff"/>
+            </svg>
+        </button>
+    </div>
+
+    <div id="chat-widget" class="chat-widget" aria-hidden="true">
+        <div class="chat-header" id="chat-header">
+            <div class="chat-title">
+                <img src="https://via.placeholder.com/40" alt="Bot avatar">
+                <div>
+                    <strong>Olti Assistant</strong>
+                    <small class="chat-status">Online</small>
+                </div>
+            </div>
+            <div class="chat-controls">
+                <button id="chat-minimize" class="chat-control" title="Minimize">—</button>
+                <button id="chat-close" class="chat-control" title="Close">✕</button>
+            </div>
+        </div>
+
+        <div class="chat-body">
+            <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+            <div id="chat-quick-replies" class="chat-quick-replies"></div>
+        </div>
+
+        <form id="chat-form" class="chat-input" autocomplete="off">
+            <input id="chat-text" type="text" placeholder="Shkruaj mesazhin..." aria-label="Message" />
+            <input id="chat-file" type="file" accept="image/*" style="display:none" />
+            <button type="button" id="chat-attach" class="chat-attach" title="Attach">📎</button>
+            <button type="submit" class="chat-send">Dërgo</button>
+        </form>
+    </div>
+
+    <script src="chat.js"></script>
 </body>
 </html>
