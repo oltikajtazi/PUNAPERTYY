@@ -231,3 +231,46 @@ footer a:hover { text-decoration: underline; }
     .chat-widget { width:94%; right:3%; bottom:80px; height:66vh; }
     .chat-open { width:52px; height:52px; }
 }
+/* Hero buttons */
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* About preview section */
+.about-preview {
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.about-preview p {
+    max-width: 700px;
+    margin: 0 auto 1rem;
+}
+
+/* Portfolio preview */
+.portfolio-preview {
+    background: #fff;
+    text-align: center;
+}
+
+.portfolio-preview .project {
+    transition: 0.3s;
+}
+
+.portfolio-preview .project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
