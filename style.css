@@ -160,9 +160,7 @@ footer a:hover { text-decoration: underline; }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* -------------------------- */
-/* Chat Widget Styles        */
-/* -------------------------- */
+
 .chat-launcher {
     position: fixed;
     right: 20px;
@@ -226,12 +224,11 @@ footer a:hover { text-decoration: underline; }
 .chat-input .chat-attach { background:transparent; border:none; cursor:pointer; font-size:18px; }
 .chat-input .chat-send { background:linear-gradient(135deg,#4CAF50,#2FA24A); color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
 
-/* Mobile adjustments */
 @media (max-width:420px){
     .chat-widget { width:94%; right:3%; bottom:80px; height:66vh; }
     .chat-open { width:52px; height:52px; }
 }
-/* Hero buttons */
+
 .hero-actions {
     display: flex;
     justify-content: center;
@@ -249,7 +246,7 @@ footer a:hover { text-decoration: underline; }
     background: rgba(255,255,255,0.15);
 }
 
-/* About preview section */
+
 .about-preview {
     background: #f9f9f9;
     text-align: center;
@@ -260,7 +257,7 @@ footer a:hover { text-decoration: underline; }
     margin: 0 auto 1rem;
 }
 
-/* Portfolio preview */
+
 .portfolio-preview {
     background: #fff;
     text-align: center;
@@ -274,3 +271,4 @@ footer a:hover { text-decoration: underline; }
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+ 
