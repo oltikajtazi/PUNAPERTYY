@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">Olti Kajtazi - Zhvillues Freelancer</title>
+    <link rel="stylesheet" href="portfolio-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="logo">Olti</a>
+            <div class="nav-links">
+                <a href="#work" data-i18n="nav_work">Puna</a>
+                <a href="#services" data-i18n="nav_services">Shërbimet</a>
+                <a href="#about" data-i18n="nav_about">Rreth</a>
+                <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+            </div>
+            <div class="language-selector">
+                <button class="lang-btn" id="currentLang">🌐 SQ</button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button data-lang="sq">Shqip (Albanian)</button>
+                    <button data-lang="en">English</button>
+                    <button data-lang="de">Deutsch (German)</button>
+                    <button data-lang="es">Español (Spanish)</button>
+                    <button data-lang="fr">Français (French)</button>
+                    <button data-lang="zh">中文 (Chinese)</button>
+                    <button data-lang="ar">العربية (Arabic)</button>
+                    <button data-lang="pt">Português (Portuguese)</button>
+                    <button data-lang="ru">Русский (Russian)</button>
+                    <button data-lang="ja">日本語 (Japanese)</button>
+                </div>
+            </div>
+            <div class="theme-toggle">
+                <button class="lang-btn" id="themeToggle" aria-label="Toggle theme">🌙</button>
+            </div>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                
+                <h1 class="hero-title" data-i18n="hero_title">Faqe Profesionale që Sillnin Klientë</h1>
+                <p class="hero-description" data-i18n="hero_description">
+                    Unë krijoj faqe interneti të shpejta dhe moderne për biznese në Kosovë,
+                    që rrisin besimin dhe gjenerojnë më shumë klientë.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-primary" data-i18n="hero_cta_quote">Merr Kuotë Falas</a>
+                    <a href="#work" class="btn-secondary" data-i18n="hero_cta_work">Shiko Punën Time</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span data-i18n="scroll_text">Scroll për të eksploruar</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="section-container">
+            <h2 class="section-title" data-i18n="services_title">Shërbimet & Çmimet</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 data-i18n="service_1_title">Faqe Biznesi Online</h3>
+                    <p data-i18n="service_1_desc">Faqe e thjeshtë 1 faqe, e përshtatshme për çdo biznes.</p>
+                    <div class="service-price">80€</div>
+                </div>
+                <div class="service-card featured">
+                    <div class="featured-badge" data-i18n="featured_badge">Më i Kërkuar</div>
+                    <h3 data-i18n="service_2_title">Landing Page</h3>
+                    <p data-i18n="service_2_desc">Faqe e fokusuar për produkt ose shërbim specifik.</p>
+                    <div class="service-price">70€ – 120€</div>
+                </div>
+                <div class="service-card">
+                    <h3 data-i18n="service_3_title">Faqe e Vogël Biznesi</h3>
+                    <p data-i18n="service_3_desc">1–3 faqe për prezantim më të plotë të biznesit.</p>
+                    <div class="service-price">120€ – 180€</div>
+                </div>
+                <div class="service-card">
+                    <h3 data-i18n="service_4_title">Ristrukturim Faqe</h3>
+                    <p data-i18n="service_4_desc">Përmirësim i faqes ekzistuese për shpejtësi dhe pamje moderne.</p>
+                    <div class="service-price">150€ – 250€</div>
+                </div>
+                <div class="service-card">
+                    <h3 data-i18n="service_5_title">Rregullim Gabimesh</h3>
+                    <p data-i18n="service_5_desc">HTML/CSS/JS/PHP – Çdo gabim i rregulluar shpejt.</p>
+                    <div class="service-price">15€ – 25€</div>
+                </div>
+                <div class="service-card">
+                    <h3 data-i18n="service_6_title">Mirëmbajtje Mujore</h3>
+                    <p data-i18n="service_6_desc">Ruajtje dhe përditësim i faqes në mënyrë të sigurt.</p>
+                    <div class="service-price">30€ – 60€<span data-i18n="per_month">/muaj</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Work -->
+    <section id="work" class="work-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="work_title">Projektet e Fundit</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/F.K.png" alt="Local Business Website">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" data-i18n="view_project">Shiko Projektin →</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-i18n="project_1_title">Faqe Biznesi Lokale</h3>
+                        <p data-i18n="project_1_desc">Faqe prezantuese për biznes lokal në Kosovë.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/vital.png" alt="Landing Page">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" data-i18n="view_project">Shiko Projektin →</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-i18n="project_2_title">Landing Page</h3>
+                        <p data-i18n="project_2_desc">Landing page për promovim shërbimi.</p>
+                        <div class="project-tags">
+                            <span>Design</span>
+                            <span>Responsive</span>
+                            <span>SEO</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/kafe.png" alt="Website Redesign">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" data-i18n="view_project">Shiko Projektin →</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 data-i18n="project_3_title">Ristrukturim Faqe</h3>
+                        <p data-i18n="project_3_desc">Përmirësim dizajni dhe shpejtësie.</p>
+                        <div class="project-tags">
+                            <span>Performance</span>
+                            <span>Modern</span>
+                            <span>Fast</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craft Section -->
+    <section class="craft-section">
+        <div class="section-container">
+            <h2 class="section-title">Craft</h2>
+            <div class="craft-grid">
+                <div class="craft-card">
+                    <div class="craft-year">2024</div>
+                    <h3>Fluid superscripts and subscripts</h3>
+                    <p>Accomplishing interactive demo with responsive typography solutions</p>
+                </div>
+                <div class="craft-card">
+                    <div class="craft-year">2024</div>
+                    <h3>CSS-TRICKS</h3>
+                    <p>Fluid superscripts and subscripts that scale seamlessly across all devices.</p>
+                </div>
+                <div class="craft-card">
+                    <div class="craft-year">2024</div>
+                    <h3>Fireworks</h3>
+                    <p>Delete layers and celebrate with interactive particle effects</p>
+                </div>
+                <div class="craft-card">
+                    <div class="craft-year">2024</div>
+                    <h3>Adaptive precision</h3>
+                    <p>Open source re-implementation of Ramus Freiburg's web experiment</p>
+                </div>
+                <div class="craft-card">
+                    <div class="craft-year">2024</div>
+                    <h3>Link spacing variables</h3>
+                    <p>Effortlessly link spacing variables to your design system</p>
+                </div>
+                <div class="craft-card">
+                    <div class="craft-year">2018</div>
+                    <h3>Golden ratio line height</h3>
+                    <p>Using the golden ratio to optimize typography with ease</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title" data-i18n="about_title">Kush jam unë?</h2>
+                    <div class="about-text">
+                        <p data-i18n="about_p1">
+                            Jam Olti Kajtazi, zhvillues freelancer që ndihmon biznese të vogla
+                            të duken profesionale online pa shpenzime të mëdha.
+                        </p>
+                        <p data-i18n="about_p2">
+                            Specializohem në faqe të thjeshta, të shpejta dhe të optimizuara për klientë realë.
+                            Çdo projekt trajtohet me kujdes dhe profesionalizëm të plotë.
+                        </p>
+                        <p data-i18n="about_p3">
+                            Qëllimi im është t'ju ndihmoj të arrini sukses online përmes faqeve moderne
+                            që punojnë si një mjet marketingu 24/7 për biznesin tuaj.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="contact-content">
+                <h2 class="contact-title" data-i18n="contact_title">Dëshironi të diskutoni një projekt ose thjesht të thoni përshëndetje?</h2>
+                <a href="mailto:kajtaziolti@gmail.com" class="contact-button" data-i18n="contact_button">Kontaktoni</a>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-column">
+                    <h3 data-i18n="contact_mail">Email</h3>
+                    <a href="mailto:kajtaziolti@gmail.com">kajtaziolti@gmail.com</a>
+                </div>
+                <div class="contact-column">
+                    <h3 data-i18n="contact_phone">Telefoni</h3>
+                    <a href="tel:+38344814971">+383 44 814 971</a>
+                </div>
+                <div class="contact-column">
+                    <h3 data-i18n="contact_location">Vendndodhja</h3>
+                    <p data-i18n="location_text">Prishtinë, Kosovë</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p data-i18n="footer_text">&copy; 2025. Krijuar nga Olti Kajtazi</p>
+            <div class="footer-links">
+                <a href="#" data-i18n="footer_privacy">Politika e Privatësisë</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="portfolio-translations.js"></script>
+    <script src="portfolio-script.js"></script>
+</body>
+</html>
