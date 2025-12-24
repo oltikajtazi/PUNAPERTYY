@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+/* HEADER */
+header {
+    background: #4CAF50;
+    color: #fff;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+    background: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+.btn {
+    background: #fff;
+    color: #4CAF50;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover { background: #f1f1f1; }
+.btn.whatsapp { background: #25D366; color: #fff; margin-left: 10px; }
+.btn.whatsapp:hover { background: #1ebe57; }
+
+/* SECTIONS */
+section { padding: 60px 0; }
+
+/* SERVICES */
+.services .service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.service {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+.service h3 { margin-bottom: 0.5rem; }
+.service span { display: block; margin-top: 0.5rem; font-weight: bold; }
+
+/* PROJECTS */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.project {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* ABOUT */
+.about p { font-size: 1.1rem; }
+
+/* CONTACT */
+.contact { background: #f4f4f4; text-align: center; }
+.contact p { margin-top: 1rem; font-size: 1.1rem; }
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+footer a { color: #4CAF50; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .header-container { flex-direction: column; gap: 10px; }
+}
+
+/* Responsive navigation */
+.nav-toggle { display:none; background:transparent; border:none; font-size:22px; color:#fff; cursor:pointer; }
+@media(max-width:768px){
+    .nav-toggle { display:block; position:absolute; right:20px; top:18px; }
+    #main-nav { display:none; width:100%; margin-top:12px; flex-direction:column; gap:8px; }
+    #main-nav.open { display:flex; }
+    #main-nav a { display:block; padding:10px 12px; background:rgba(255,255,255,0.04); border-radius:6px; }
+    .header-container { align-items:flex-start; position:relative; padding:12px 0; }
+}
+
+/* Hero adjustments for small screens */
+@media(max-width:420px){
+    .hero { padding:48px 0; }
+    .hero h1 { font-size:1.5rem; }
+    .hero p { font-size:1rem; }
+}
+
+/* Services spacing on small screens */
+@media(max-width:520px){
+    .services .service-list { gap:12px; }
+    .service { padding:0.75rem; }
+}
+
+/* Chat widget mobile polish */
+@media (max-width:420px){
+    .chat-widget { width:100%; right:0; left:0; bottom:0; top:auto; height:64vh; border-radius:12px 12px 0 0; max-width:100%; }
+    .chat-header { padding:10px 12px; }
+    .chat-body { padding:10px; }
+    .chat-input { padding:10px; }
+}
+
+/* Tekst i tërheqëshem në About */
+.about .highlight {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animacion i thjeshtë për të tërhequr vëmendje */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.chat-launcher {
+    position: fixed;
+    right: 20px;
+    bottom: 28px;
+    z-index: 1000;
+}
+.chat-open {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg,#4CAF50,#2FA24A);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    display:flex;align-items:center;justify-content:center;
+    cursor: pointer;
+}
+.chat-open svg { filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15)); }
+
+.chat-widget {
+    position: fixed;
+    right: 20px;
+    bottom: 96px;
+    width: 360px;
+    max-width: calc(100% - 40px);
+    height: 520px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+    user-select: none;
+}
+.chat-widget.open { display:flex; }
+.chat-header { background: linear-gradient(90deg,#3aa55a,#2b9c4b); color:#fff; padding:12px 14px; display:flex; align-items:center; justify-content:space-between; cursor:grab; }
+.chat-title { display:flex; gap:10px; align-items:center; }
+.chat-title img { width:40px; height:40px; border-radius:8px; object-fit:cover; }
+.chat-title strong { display:block; font-size:14px; }
+.chat-title small { display:block; font-size:12px; opacity:0.9; }
+.chat-controls { display:flex; gap:8px; }
+.chat-control { background:transparent; border:none; color:#fff; font-size:16px; cursor:pointer; padding:4px 6px; }
+
+.chat-body { padding:14px; flex:1 1 auto; display:flex; flex-direction:column; gap:10px; background:linear-gradient(180deg,#f7faf8,#ffffff); }
+.chat-messages { overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling: touch; padding-right:6px; display:flex; flex-direction:column; gap:10px; flex:1 1 auto; min-height:0; touch-action: pan-y; overscroll-behavior: contain; }
+.chat-messages .msg { max-width:78%; padding:10px 12px; border-radius:12px; font-size:14px; line-height:1.35; }
+.chat-messages .msg.bot { background:#f1f6f3; align-self:flex-start; color:#1a1a1a; }
+.chat-messages .msg.user { background:#4CAF50; color:#fff; align-self:flex-end; }
+.chat-messages .msg img { max-width:220px; border-radius:8px; display:block; }
+.chat-messages .typing { display:inline-block; width:72px; height:28px; background:#eef4ee; border-radius:14px; position:relative; }
+.dots span { display:inline-block; width:7px; height:7px; background:#7dbf88; border-radius:50%; margin:0 3px; animation: pop 1s infinite ease-in-out; }
+.dots span:nth-child(2) { animation-delay:0.12s }
+.dots span:nth-child(3) { animation-delay:0.24s }
+@keyframes pop { 0%,80%,100% { transform:translateY(0) } 40%{ transform:translateY(-6px) } }
+
+.chat-quick-replies { display:flex; gap:8px; flex-wrap:wrap; }
+.chat-quick-replies button { background:transparent; border:1px solid #ddd; padding:6px 10px; border-radius:18px; cursor:pointer; font-size:13px; }
+
+.chat-input { display:flex; gap:8px; padding:12px; border-top:1px solid #eee; }
+.chat-input input[type="text"] { flex:1 1 auto; padding:10px 12px; border-radius:8px; border:1px solid #ddd; font-size:14px; }
+.chat-input .chat-attach { background:transparent; border:none; cursor:pointer; font-size:18px; }
+.chat-input .chat-send { background:linear-gradient(135deg,#4CAF50,#2FA24A); color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+
+@media (max-width:420px){
+    .chat-widget { width:94%; right:3%; bottom:80px; height:66vh; }
+    .chat-open { width:52px; height:52px; }
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+
+.about-preview {
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.about-preview p {
+    max-width: 700px;
+    margin: 0 auto 1rem;
+}
+
+
+.portfolio-preview {
+    background: #fff;
+    text-align: center;
+}
+
+.portfolio-preview .project {
+    transition: 0.3s;
+}
+
+.portfolio-preview .project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+ 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhvillues Freelancer - Prishtinë</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="container header-container">
+        <h1>Zhvillues Freelancer</h1>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">Rreth Meje</a>
+            <a href="projects.html">Projektet</a>
+            <a href="contact.html">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>Faqe Profesionale që Sillnin Klientë</h1>
+        <p>Unë krijoj faqe interneti të shpejta dhe moderne për biznese në Kosovë,
+           që rrisin besimin dhe gjenerojnë më shumë klientë.</p>
+        <div class="hero-actions">
+            <a href="contact.html" class="btn">Merr Kuotë Falas</a>
+            <a href="projects.html" class="btn btn-outline">Shiko Punën Time</a>
+        </div>
+    </div>
+</section>
+
+<!-- SHËRBIMET & ÇMIMET -->
+<section class="services">
+    <div class="container">
+        <h2>Shërbimet & Çmimet</h2>
+        <div class="service-list">
+            <div class="service">
+                <h3>Faqe Biznesi Online</h3>
+                <p>Faqe e thjeshtë 1 faqe, e përshtatshme për çdo biznes.</p>
+                <span>80€</span>
+            </div>
+            <div class="service">
+                <h3>Landing Page</h3>
+                <p>Faqe e fokusuar për produkt ose shërbim specifik.</p>
+                <span>70€ – 120€</span>
+            </div>
+            <div class="service">
+                <h3>Faqe e Vogël Biznesi</h3>
+                <p>1–3 faqe për prezantim më të plotë të biznesit.</p>
+                <span>120€ – 180€</span>
+            </div>
+            <div class="service">
+                <h3>Ristrukturim Faqe</h3>
+                <p>Përmirësim i faqes ekzistuese për shpejtësi dhe pamje moderne.</p>
+                <span>150€ – 250€</span>
+            </div>
+            <div class="service">
+                <h3>Rregullim Gabimesh</h3>
+                <p>HTML/CSS/JS/PHP – Çdo gabim i rregulluar shpejt.</p>
+                <span>15€ – 25€ për gabim</span>
+            </div>
+            <div class="service">
+                <h3>Mirëmbajtje Mujore</h3>
+                <p>Ruajtje dhe përditësim i faqes në mënyrë të sigurt.</p>
+                <span>30€ – 60€ / muaj</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="about-preview">
+    <div class="container">
+        <h2>Kush jam unë?</h2>
+        <p class="highlight">
+            Jam Olti Kajtazi, zhvillues freelancer që ndihmon biznese të vogla
+            të duken profesionale online pa shpenzime të mëdha.
+        </p>
+        <p>
+            Specializohem në faqe të thjeshta, të shpejta dhe të optimizuara për klientë realë.
+        </p>
+        <a href="about.html" class="btn">Lexo më shumë</a>
+    </div>
+</section>
+
+<!-- PORTFOLIO PREVIEW -->
+<section class="portfolio-preview">
+    <div class="container">
+        <h2>Projektet e Fundit</h2>
+        <div class="project-list">
+            <div class="project">
+                <h3>Faqe Biznesi Lokale</h3>
+                <p>Faqe prezantuese për biznes lokal në Kosovë.</p>
+            </div>
+            <div class="project">
+                <h3>Landing Page</h3>
+                <p>Landing page për promovim shërbimi.</p>
+            </div>
+            <div class="project">
+                <h3>Ristrukturim Faqe</h3>
+                <p>Përmirësim dizajni dhe shpejtësie.</p>
+            </div>
+        </div>
+        <br>
+        <a href="projects.html" class="btn">Shiko të gjitha projektet</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Olti Kajtazi – Zhvillues Freelancer në Kosovë | 
+            <a href="contact.html">Kontakto</a>
+        </p>
+    </div>
+</footer>
+
+<!-- Chat Widget -->
+<div id="chat-launcher" class="chat-launcher" aria-hidden="false">
+    <button id="chat-open" class="chat-open" aria-label="Open chat">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="#fff"/>
+        </svg>
+    </button>
+</div>
+
+<div id="chat-widget" class="chat-widget" aria-hidden="true">
+    <div class="chat-header" id="chat-header">
+        <div class="chat-title">
+            <img src="https://via.placeholder.com/40" alt="Bot avatar">
+            <div>
+                <strong>Olti Assistant</strong>
+                <small class="chat-status">Online</small>
+            </div>
+        </div>
+        <div class="chat-controls">
+            <button id="chat-minimize" class="chat-control" title="Minimize">—</button>
+            <button id="chat-close" class="chat-control" title="Close">✕</button>
+        </div>
+    </div>
+
+    <div class="chat-body">
+        <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+        <div id="chat-quick-replies" class="chat-quick-replies"></div>
+    </div>
+
+    <form id="chat-form" class="chat-input" autocomplete="off">
+        <input id="chat-text" type="text" placeholder="Shkruaj mesazhin..." aria-label="Message" />
+        <input id="chat-file" type="file" accept="image/*" style="display:none" />
+        <button type="button" id="chat-attach" class="chat-attach" title="Attach">📎</button>
+        <button type="submit" class="chat-send">Dërgo</button>
+    </form>
+</div>
+
+<script src="chat.js"></script>
+</body>
+</html>
