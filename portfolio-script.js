@@ -334,3 +334,48 @@ function typeWriter(element, text, speed = 50) {
 
 console.log("Portfolio loaded successfully")
 console.log("[v0] Advanced animations and interactions loaded")
+
+// Contact modal: open choice between Email and WhatsApp
+;(function () {
+  const contactButton = document.getElementById("contactButton")
+  const modal = document.getElementById("contactModal")
+  const overlay = document.getElementById("contactModalOverlay")
+  const closeBtn = document.getElementById("contactModalClose")
+
+  if (!contactButton || !modal) return
+
+  function openModal() {
+    modal.setAttribute("aria-hidden", "false")
+    document.body.style.overflow = "hidden"
+    // focus the first actionable element
+    const first = modal.querySelector(".modal-action")
+    if (first) first.focus()
+  }
+
+  function closeModal() {
+    modal.setAttribute("aria-hidden", "true")
+    document.body.style.overflow = ""
+    contactButton.focus()
+  }
+
+  contactButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    openModal()
+  })
+
+  overlay && overlay.addEventListener("click", closeModal)
+  closeBtn && closeBtn.addEventListener("click", closeModal)
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+      closeModal()
+    }
+  })
+
+  // Optional: when a modal action is clicked, allow default link behavior but close the modal
+  modal.querySelectorAll(".modal-action").forEach((el) => {
+    el.addEventListener("click", () => {
+      closeModal()
+    })
+  })
+})()
