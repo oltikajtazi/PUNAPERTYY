@@ -378,4 +378,82 @@ console.log("[v0] Advanced animations and interactions loaded")
       closeModal()
     })
   })
+  // Ensure mailto opens on systems where default handlers are unreliable.
+  const modalEmail = document.getElementById("modalEmail")
+  if (modalEmail) {
+    modalEmail.addEventListener("click", (e) => {
+      e.preventDefault()
+      const href = modalEmail.getAttribute("href") || "mailto:kajtaziolti@gmail.com"
+      console.log("[contact modal] email click ->", href)
+
+      // Try several methods to open mail client, with fallbacks
+      try {
+        window.location.href = href
+        setTimeout(closeModal, 150)
+        return
+      } catch (err) {
+        console.warn("window.location failed for mailto", err)
+      }
+
+      try {
+        const a = document.createElement("a")
+        a.href = href
+        a.style.display = "none"
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+        setTimeout(closeModal, 150)
+        return
+      } catch (err) {
+        console.warn("programmatic anchor click failed for mailto", err)
+      }
+
+      try {
+        window.open(href, "_self")
+        setTimeout(closeModal, 150)
+        return
+      } catch (err) {
+        console.warn("window.open failed for mailto", err)
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText("kajtaziolti@gmail.com")
+        alert("Email address copied to clipboard: kajtaziolti@gmail.com\nPlease paste it into your mail app.")
+      } else {
+        alert("Please contact: kajtaziolti@gmail.com")
+      }
+    })
+  }
+
+  // WhatsApp fallback: open via window.open as redundancy
+  const modalWA = document.getElementById("modalWhatsApp")
+  if (modalWA) {
+    modalWA.addEventListener("click", (e) => {
+      e.preventDefault()
+      const href = modalWA.getAttribute("href")
+      console.log("[contact modal] whatsapp click ->", href)
+
+      try {
+        window.open(href, "_blank")
+      } catch (err) {
+        console.warn("window.open failed for whatsapp", err)
+      }
+
+      try {
+        const a = document.createElement("a")
+        a.href = href
+        a.target = "_blank"
+        a.rel = "noopener"
+        a.style.display = "none"
+        document.body.appendChild(a)
+        a.click()
+        a.remove()
+      } catch (err) {
+        console.warn("programmatic anchor click failed for whatsapp", err)
+      }
+
+      setTimeout(closeModal, 150)
+    })
+  }
+
 })()
