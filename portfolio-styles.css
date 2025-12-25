@@ -915,6 +915,8 @@ html[dir="rtl"] .language-selector {
   background-color: var(--color-background);
   transform-style: preserve-3d;
   perspective: 1000px;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .service-card::before {
@@ -926,6 +928,9 @@ html[dir="rtl"] .language-selector {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transition: left 0.5s;
+  pointer-events: none;
+  will-change: left;
+  backface-visibility: hidden;
 }
 
 .service-card:hover::before {
