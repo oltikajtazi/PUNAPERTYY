@@ -386,41 +386,50 @@ console.log("[v0] Advanced animations and interactions loaded")
       const href = modalEmail.getAttribute("href") || "mailto:kajtaziolti@gmail.com"
       console.log("[contact modal] email click ->", href)
 
-      // Try several methods to open mail client, with fallbacks
-      try {
-        window.location.href = href
-        setTimeout(closeModal, 150)
-        return
-      } catch (err) {
-        console.warn("window.location failed for mailto", err)
+      // Try opening the mail client
+      try { window.location.href = href } catch (err) { console.warn(err) }
+
+      // Show fallback options after a short delay if nothing happened
+      const fallback = document.getElementById("contactModalFallback")
+      let shown = false
+      const timer = setTimeout(() => {
+        if (fallback) {
+          fallback.style.display = "block"
+          shown = true
+        }
+      }, 700)
+
+      // If user closes modal quickly, clear the timer
+      const cleanup = () => { clearTimeout(timer); if (fallback && !shown) fallback.style.display = "none" }
+
+      // wire fallback buttons
+      const btnGmail = document.getElementById("fallbackGmail")
+      const btnCopy = document.getElementById("fallbackCopy")
+      const btnCall = document.getElementById("fallbackCall")
+
+      if (btnGmail) btnGmail.onclick = () => {
+        const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent("kajtaziolti@gmail.com")}`
+        window.open(gmail, "_blank")
+        cleanup()
+        closeModal()
       }
 
-      try {
-        const a = document.createElement("a")
-        a.href = href
-        a.style.display = "none"
-        document.body.appendChild(a)
-        a.click()
-        a.remove()
-        setTimeout(closeModal, 150)
-        return
-      } catch (err) {
-        console.warn("programmatic anchor click failed for mailto", err)
+      if (btnCopy) btnCopy.onclick = async () => {
+        try {
+          await navigator.clipboard.writeText("kajtaziolti@gmail.com")
+          alert("Email copied to clipboard: kajtaziolti@gmail.com")
+        } catch (err) {
+          alert("Please copy: kajtaziolti@gmail.com")
+        }
+        cleanup()
+        closeModal()
       }
 
-      try {
-        window.open(href, "_self")
-        setTimeout(closeModal, 150)
-        return
-      } catch (err) {
-        console.warn("window.open failed for mailto", err)
-      }
-
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText("kajtaziolti@gmail.com")
-        alert("Email address copied to clipboard: kajtaziolti@gmail.com\nPlease paste it into your mail app.")
-      } else {
-        alert("Please contact: kajtaziolti@gmail.com")
+      if (btnCall) btnCall.onclick = () => {
+        // open tel: as fallback
+        try { window.location.href = "tel:+38344814971" } catch (err) {}
+        cleanup()
+        closeModal()
       }
     })
   }
