@@ -1,4 +1,34 @@
-# Publish the repository root (static site). No build command.
+# Netlify configuration – static site, no build step.
 [build]
   publish = "."
-  command = ""
+
+# Old URL from the previous version of the site keeps working.
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Security + caching headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
