@@ -7,12 +7,12 @@ Static site: no build step, no dependencies.
 2. Drag this whole folder onto the deploy drop zone (or connect it to a Git repo; leave build command empty, publish directory `.`).
 3. In **Forms**, the `contact` form appears after the first deploy. Turn on email notifications (Site configuration → Forms → Form notifications) so messages reach you.
 
-## Project screenshots
-The project cards use preview images from the live project sites, so they also work when opening `index.html` directly from your computer. To use local screenshots instead, save them here:
+## Add your own screenshots (recommended, loads faster)
+Save a screenshot of each project and put it here:
 - `assets/projects/rr-netzmontage.jpg`
 - `assets/projects/vital-clinic.jpg`
 
-Then update the matching image `src` values in `index.html` to those local file paths.
+Until then, the page falls back to images from the live project sites.
 For the social preview card, add `assets/og-image.png` (1200×630).
 
 ## Edit text

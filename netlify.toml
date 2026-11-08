@@ -2,10 +2,22 @@
 [build]
   publish = "."
 
-# Old URL from the previous version of the site keeps working.
+# Old URLs keep working even if shared or bookmarked.
 [[redirects]]
   from = "/portfolio.html"
   to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy/"
   status = 301
   force = true
 

@@ -5,29 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kajtazi Digital Solutions – Web Design &amp; Development</title>
 <meta name="description" content="Fast, modern websites for businesses across Europe. Business sites, online shops and redesigns by Kajtazi Digital Solutions.">
-<link rel="canonical" href="https://oltikajtazi.xyz/">
+<link rel="canonical" href="https://olti.netlify.app/">
 <meta name="theme-color" content="#f6f4ef">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kajtazi Digital Solutions – Websites that bring in customers">
 <meta property="og:description" content="Fast, modern websites with clear pricing. Business sites, online shops and redesigns.">
-<meta property="og:url" content="https://oltikajtazi.xyz/">
-<meta property="og:image" content="https://oltikajtazi.xyz/assets/og-image.png">
+<meta property="og:url" content="https://olti.netlify.app/">
+<meta property="og:image" content="https://olti.netlify.app/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 
 <script>
   // set theme before paint to avoid a flash
   try {
-    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var t = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+    var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', t);
   } catch (e) {}
 </script>
@@ -40,7 +39,7 @@
   "url": "https://olti.netlify.app/",
   "logo": "https://olti.netlify.app/assets/logo/logo-mark-1024.png",
   "founder": { "@type": "Person", "name": "Olti Kajtazi" },
-  "email": "kajtaziolti35@gmail.com",
+  "email": "kajtaziolti@gmail.com",
   "telephone": "+38344814971",
   "areaServed": ["Germany", "Switzerland", "Austria", "Europe"],
   "description": "Web design and development: fast, modern websites for small and medium businesses."
@@ -120,7 +119,7 @@
     <article class="project reveal">
       <div class="shot">
         <div class="shot-bar"><i></i><i></i><i></i><span>rr-netzmontage.de</span></div>
-        <img src="https://rr-netzmontage.de/images/hero-2.jpg" data-fallback="https://rr-netzmontage.de/images/hero-2.jpg" alt="RR-NetzMontage website preview" loading="lazy" width="1200" height="750">
+        <img src="/assets/projects/rr-netzmontage.jpg" data-fallback="https://rr-netzmontage.de/images/hero-2.jpg" alt="RR-NetzMontage website preview" loading="lazy" width="1200" height="750">
       </div>
       <div class="project-body">
         <p class="project-tag" data-i18n="p1.tag">Construction &amp; safety · Germany</p>
@@ -137,7 +136,7 @@
     <article class="project flip reveal">
       <div class="shot">
         <div class="shot-bar"><i></i><i></i><i></i><span>vitalclinic-ks.com</span></div>
-        <img src="https://vitalclinic-ks.com/images/og-image.png" data-fallback="https://vitalclinic-ks.com/images/og-image.png" alt="Vital Health Group website preview" loading="lazy" width="1200" height="750">
+        <img src="/assets/projects/vital-clinic.jpg" data-fallback="https://vitalclinic-ks.com/images/og-image.png" alt="Vital Health Group website preview" loading="lazy" width="1200" height="750">
       </div>
       <div class="project-body">
         <p class="project-tag" data-i18n="p2.tag">Healthcare · Kosovo</p>
@@ -244,7 +243,7 @@
       <p class="muted" data-i18n="contact.sub">Fill in the form or message me directly on WhatsApp.</p>
 
       <dl class="contact-list">
-        <div><dt>Email</dt><dd><a href="mailto:kajtaziolti35@gmail.com">kajtaziolti35@gmail.com</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:kajtaziolti@gmail.com">kajtaziolti@gmail.com</a></dd></div>
         <div><dt data-i18n="contact.phone">Phone</dt><dd><a href="tel:+38344814971">+383 44 814 971</a></dd></div>
         <div><dt data-i18n="contact.loc">Way of working</dt><dd data-i18n="contact.locv">Remote, serving clients across Europe</dd></div>
       </dl>
@@ -255,7 +254,7 @@
       </a>
     </div>
 
-    <form class="form reveal" name="contact" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form class="form reveal" name="contact" method="POST" action="/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
       <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
 
@@ -276,14 +275,14 @@
       <label><span data-i18n="f.msg">Message</span>
         <textarea name="message" rows="5" required></textarea></label>
       <button class="btn btn-primary" type="submit" data-i18n="f.send">Send message</button>
-      <p class="muted small"><span data-i18n="f.priv">Your details are used only to reply to you.</span> <a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a></p>
+      <p class="muted small"><span data-i18n="f.priv">Your details are used only to reply to you.</span> <a href="/privacy/" data-i18n="footer.privacy">Privacy policy</a></p>
     </form>
   </section>
 </main>
 
 <footer class="site-footer wrap">
   <p>© <span id="year">2026</span> Kajtazi Digital Solutions</p>
-  <p><a href="privacy.html" data-i18n="footer.privacy">Privacy policy</a></p>
+  <p><a href="/privacy/" data-i18n="footer.privacy">Privacy policy</a></p>
 </footer>
 
 <a class="wa-float" href="https://wa.me/38344814971" target="_blank" rel="noopener" aria-label="WhatsApp">
@@ -303,7 +302,7 @@
   <p class="muted small dlg-note" data-i18n="work.note">If the preview doesn't load, open the site in a new tab.</p>
 </dialog>
 
-<script src="js/i18n.js" defer></script>
-<script src="js/main.js" defer></script>
+<script src="/js/i18n.js" defer></script>
+<script src="/js/main.js" defer></script>
 </body>
 </html>
